@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.condominium'
 COIN_DAEMON='condominiumd'
 COIN_CLI='condominium-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/condominium/CondominiumCore/releases/download/v1.1.0.0/linux1100.zip'
+COIN_TGZ='https://github.com/condominium/CondominiumCore/releases/download/v1.2.1.0/CDM-linux1210.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Condominium'
 COIN_PORT=33588
@@ -26,8 +26,8 @@ function download_node() {
   wget -q $COIN_TGZ
   compile_error
   unzip $COIN_ZIP >/dev/null 2>&1
-  cp linux1100/$COIN_CLI $COIN_PATH >/dev/null 2>&1
-  cp linux1100/$COIN_DAEMON $COIN_PATH >/dev/null 2>&1
+  cp linux1210/$COIN_CLI $COIN_PATH >/dev/null 2>&1
+  cp linux1210/$COIN_DAEMON $COIN_PATH >/dev/null 2>&1
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
